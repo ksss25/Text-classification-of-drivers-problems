@@ -44,7 +44,7 @@ def parse_one_marque(model_name):
     try:
         driver.get('https://www.drive2.ru/')
         # driver.maximize_window()
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight - 1000);")
         h = driver.execute_script("return document.documentElement.scrollHeight")
         time.sleep(1)
         link_all = driver.find_element("xpath", '/html/body/main/div[2]/button')  # кнопка "все марки машин"
@@ -161,7 +161,7 @@ if __name__ == '__main__':
     data = []
     try:
         driver.get('https://www.drive2.ru/')
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight - 1000);")
         height = driver.execute_script("return document.documentElement.scrollHeight")
         time.sleep(1)
         all_link = driver.find_element("xpath", '/html/body/main/div[2]/button')  # кнопка "все марки машин"
@@ -171,12 +171,13 @@ if __name__ == '__main__':
         s = []
         for elem in marques:
             s.append(elem.text)
-        all_marques = s[0].split('\n')[:-2]  # список всех марок
+        # all_marques = s[0].split('\n')[:-2]  # список всех марок
+        all_marques = ['Genesis']
     finally:
         driver.quit()
-    for i in range(95):
-        start = 2 * i
-        end = start + 2
+    for i in range(1):
+        start = 1 * i
+        end = start + 1
         batch = all_marques[start:end]
         processes = []
         for model in batch:
