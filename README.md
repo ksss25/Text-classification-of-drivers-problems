@@ -19,7 +19,7 @@
    Test data: drive2_BMW_preprocessed.csv (первые 171 описаний) + drive2_BMW_target171.csv
 4. Предобработка, векторизация, применение KNN, LogisticRegression, CatBoost, оценка качества: drive2_naiive.ipynb
 5. Скрипт для обращения к LLaMA: script_llama.py
-6. Формирование датасета для DPO и оценка качества LLaMA без дообучения: drive2_pairs_bmw.ipynb (171 пример)
+6. Формирование датасета для DPO и оценка качества LLaMA без дообучения: drive2_pairs_bmw.ipynb (171 пример) -> pairs_BMW_train.csv
 7. Применение DPO + LoRA: dpo_llama.py
 8. Формирование размеченного датасета BMW при помощи LLaMA: markup_BMW.py
 9. Размеченный датасет (5859 размеченных текстовых описаний): drive2_BMW_final.csv
